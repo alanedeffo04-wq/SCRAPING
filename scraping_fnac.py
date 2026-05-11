@@ -10,3 +10,4 @@ url = "https://www.fnac.com/SearchResult/ResultList.aspx?Search=chargeur+iphone&
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
+response = requests.get(url, headers=headers)
