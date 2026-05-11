@@ -22,3 +22,14 @@ if response.status_code == 200:
     produits = soup.find_all("article")
 
     resultats = []
+
+ Extraction des données
+    for produit in produits:
+        nom = produit.find("h2")
+        prix = produit.find("span", class_="Article-price")
+
+        if nom and prix:
+            resultats.append({
+                "nom_produit": nom.get_text(strip=True),
+                "prix": prix.get_text(strip=True)
+            })
